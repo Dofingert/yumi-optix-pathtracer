@@ -305,7 +305,7 @@ namespace gdt {
   template<typename T>
   inline __both__ vec_t<T,3> normalize(const vec_t<T,3> &v)
   {
-    return v * (1.f/gdt::overloaded::sqrt(dot(v,v)));
+    return v * 1.f/gdt::overloaded::sqrt(dot(v,v));
   }
 
   /*! vector cross product */
