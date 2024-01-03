@@ -16,7 +16,7 @@
 
 /*
 
-¶ÔÓÚ±¾ÎÄ¼þµÄÐÞ¸ÄÖ÷ÒªÔÚSBTµÄ¹¹½¨²¿·Ö£¬Ôö¼ÓÁË×Ô¶¨Òå²ÄÖÊµÄÖ§³ÖÄÚÈÝ¡£
+ï¿½ï¿½ï¿½Ú±ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½Òªï¿½ï¿½SBTï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½Ý¡ï¿½
 
 */
 
@@ -786,7 +786,7 @@ namespace osc {
     launchParams.frame.frameID = 0;
     launchParams.camera.position  = camera.from;
     launchParams.camera.direction = normalize(camera.at-camera.from);
-    const float cosFovy = 0.66f;
+    const float cosFovy = 0.9f;
     const float aspect
       = float(launchParams.frame.size.x)
       / float(launchParams.frame.size.y);

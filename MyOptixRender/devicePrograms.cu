@@ -272,7 +272,7 @@ namespace osc {
   // valid intersection
   //
   // as with the anyhit/closest hit programs, in this example we only
-  // need to have _some_ dummy function to set up a valid SBT
+  // need to have _some_ dummy function to set up a valid SBT-
   // ------------------------------------------------------------------------------
   
   extern "C" __global__ void __miss__radiance()
@@ -280,7 +280,12 @@ namespace osc {
       PRD& prd = *getPRD<PRD>();
       // set to constant white as background color
       const vec3f backgroundColor = vec3f((0.75 - (0.25 * prd.dst[1])),(0.85 - (0.15 * prd.dst[1])),1.0);
-      prd.pixelColor += backgroundColor * prd.pixelMuler * 4.5f;
+      prd.pixelColor += backgroundColor * prd.pixelMuler * 0.55f;
+      // parallel lights
+      const vec3f sunColor = vec3f(253.f / 256, 150.f / 256, 19.f / 256);
+      const vec3f parallelLightDir = normalize(vec3f(-0.75f,1.f,1.f));
+      float sunDensity = max((dot(parallelLightDir,prd.dst) - 0.98f) * 900,0.0f);
+      prd.pixelColor += sunColor * sunDensity;
       prd.dst = vec3f(0.f, 0.f, 0.f);
   }
 
